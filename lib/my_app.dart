@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_exemple_two/contador_page.dart';
 
 import 'my_home_page.dart';
 
@@ -10,7 +11,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: "Primeiro App com Provider",
       theme: ThemeData(primaryColor: Colors.deepOrange),
-      home: const MyHomePage( ),
+      home: const MyHomePage(),
+      routes: {
+        '/contador': (context) => ContadorPage(),
+      },
     );
   }
 }

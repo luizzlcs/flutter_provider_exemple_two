@@ -12,13 +12,24 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Primeiros passos com Provider'),
       ),
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            (context).select((Pessoa p) => p.nome) +
-                ' Tem ${(context).select((Pessoa p) => p.idade)} de idade',
-            style: const TextStyle(fontSize: 22),
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                (context).select((Pessoa p) => p.nome) +
+                    ' Tem ${(context).select((Pessoa p) => p.idade)} de idade',
+                style: const TextStyle(fontSize: 16),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pushNamed('/contador');
+              },
+              child: const Text('Incrementador'),
+            ),
+          ],
         ),
       ),
     );
