@@ -15,22 +15,33 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                (context).select((Pessoa p) => p.nome) +
-                    ' Tem ${(context).select((Pessoa p) => p.idade)} de idade',
-                style: const TextStyle(fontSize: 16),
-              ),
-            ),
             ElevatedButton(
               onPressed: () {
                 Navigator.of(context).pushNamed('/contador');
               },
               child: const Text('Incrementador'),
             ),
+            Padding(
+              padding: const EdgeInsets.only(top: 100.0),
+              child: Text(
+                (context).select((Pessoa p) => p.nome) +
+                    ' Tem ${(context).select((Pessoa p) => p.idade)} de idade',
+                style: const TextStyle(fontSize: 16),
+              ),
+            ),
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Provider.of<Pessoa>(context, listen: false).incrementaIdade();
+        },
+        label: const Text(
+          '+',
+          style: TextStyle(fontSize: 42),
+        ),
+        icon: const Icon(Icons.thumb_up),
+        backgroundColor: Colors.pink,
       ),
     );
   }

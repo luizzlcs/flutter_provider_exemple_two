@@ -7,7 +7,6 @@ class ContadorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var i;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Incrementador'),
@@ -15,15 +14,15 @@ class ContadorPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(i.toString()),
           Text((context).select((Contador c) => c.numerador).toString()),
           Center(
-            child: ElevatedButton.icon(
+            child: FloatingActionButton.extended(
+              backgroundColor: Colors.green,
+              label: Text('Contador'),
+              icon: Icon(Icons.navigation),
               onPressed: () {
-                
+                Provider.of<Contador>(context, listen: false).incrementar();
               },
-              icon: const Icon(Icons.add),
-              label: const Text(''),
             ),
           ),
         ],
