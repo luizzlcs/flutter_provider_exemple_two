@@ -11,7 +11,7 @@ void main() {
     MultiProvider(
       providers: [
         ChangeNotifierProvider<Pessoa>(
-          create: (_) => Pessoa(nome: 'Thiago Pereiro', idade: 38),
+          create: (_) => Pessoa(nome: 'Lucicleide', idade: 37),
         ),
         ChangeNotifierProvider<Contador>(
           create: (_) => Contador(numerador: 0),

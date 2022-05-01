@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
 class Contador with ChangeNotifier {
-  int numerador = 0;
+  
+  int numerador;
 
   Contador({
     required this.numerador,

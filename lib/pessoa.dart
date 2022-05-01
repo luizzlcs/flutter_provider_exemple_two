@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 class Pessoa with ChangeNotifier {
+  
   String nome = 'Maria Lucia';
   int idade = 56;
 

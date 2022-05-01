@@ -15,11 +15,12 @@ class MyHomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
+            ElevatedButton.icon(
+              icon: Icon(Icons.pages),
               onPressed: () {
                 Navigator.of(context).pushNamed('/contador');
               },
-              child: const Text('Incrementador'),
+              label: const Text('Página 2'),
             ),
             Padding(
               padding: const EdgeInsets.only(top: 100.0),
